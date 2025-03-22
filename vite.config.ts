@@ -6,11 +6,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   build: {
-    outDir: "dist",
+    rollupOptions: {
+      input: path.resolve(__dirname, "index.html"), // 👈 this is the fix
+    },
   },
-  root: ".", // 👈 ENSURES VITE LOOKS FOR index.html HERE
 });

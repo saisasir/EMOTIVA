@@ -1,11 +1,11 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
-import path from 'path';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
 
 export default defineConfig({
-  root: ".", // 👈 ensure Vite knows where to look
+  root: ".", // <- This is important, ensures Vite starts from root
   build: {
-    outDir: "dist",
+    outDir: "dist", // Final build will go to /dist
     emptyOutDir: true,
   },
   plugins: [react()],

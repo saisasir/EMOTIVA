@@ -11,7 +11,8 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      input: path.resolve(__dirname, "index.html"), // 👈 this is the fix
+      // 👇 Tells Vite to use root-level index.html as entry
+      input: path.resolve(__dirname, "index.html"),
     },
   },
 });

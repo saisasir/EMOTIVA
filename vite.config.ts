@@ -3,15 +3,15 @@ import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 
 export default defineConfig({
-  root: '.', // 👈 tells Vite to look for index.html here
+  root: '.', // 👈 THIS IS CRITICAL
   build: {
-    outDir: 'dist',
+    outDir: 'dist', // 👈 Tells Vite to output to dist
     emptyOutDir: true
   },
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, './src')
     }
   }
 })
